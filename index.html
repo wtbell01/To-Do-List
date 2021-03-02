@@ -3,26 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Todo app</title>
 
- 
+  <title>Todo app</title>
 </head>
 <body>
 
-  Todo
+  <!-- Hero background -->
+  <div class="hero-background">
+    <!-- Hero header container -->
+    <div class="hero-header">
+      <!-- Header logo on the left -->
+      <h1 class="header-logo-text">Todo</h1>
 
-  <!-- Add dynamic number --> items left
+      <!-- Header image container on the right -->
+      <div class="header-image-container">
+        <img src="/images/icon-moon.svg" alt="Moon" class="header-image">
+      </div>
+    </div>
+  </div>
 
-  All
+  <!-- To do form -->
+  <form class="to-do-form">
+    <!-- To do input -->
+    <input type="text" id="to-do-input" class="to-do-input" placeholder="Create a new todo">
+
+    <!-- To do output-->
+    <div class="to-do-output-container">
+      <div class="to-do-output-row">
+        <!-- Button status-->
+        <div class="output-status-button-container">
+          <a href="#" class="output-status-button"></a>
+        </div>
+
+        <!-- output text container -->
+        <div class="output-text-container">
+          <p class="output-text">Do homework and stuff</p>
+        </div>
+
+        <!-- Output delete container -->
+        <div class="output-delete-nutton-container">
+          <a href="" class="output-delete-button">x</a>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- Todo -->
+
+  <!-- Add dynamic number items left --> 
+
+  <!-- All
   Active 
   Completed
 
   Clear Completed
 
-  Drag and drop to reorder list
+  Drag and drop to reorder list -->
 
 </body>
 </html>
