@@ -27,5 +27,90 @@ li{
   --very-light-grayish-blue: #e4e5f1;
   --light-grayish-blue: #d2d3db;
   --dark-grayish-blue: #9394a5;
+  --input-gray: #9495A5;
+  --output-gray: #494C6B;
   --very-dark-grayish-blue: #484b6a;
+  --white: #ffffff;
+}
+
+/* Hero background */
+.hero-background{
+  height: 50vh;
+  width: 100vw;
+  background: url('/images/bg-desktop-light.jpg') no-repeat center center/cover;
+  position: relative;
+}
+
+/* Header container inside the hero */
+.hero-header{
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  margin: 0 auto;
+  padding: 4.3rem 0 0 0;
+}
+
+/* Header logo text on the left side of the hero */
+.header-logo-text{
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 1rem;
+}
+
+/* To do form */
+.to-do-form{
+  position: absolute;
+  top: 12rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 40%;
+}
+
+/* Input field on the to do form */
+.to-do-input{
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  font-size: 1.125rem;
+  padding: 1.25rem 0 1.25rem 0;
+  width: 100%;
+  color: var(--input-gray); 
+  margin-bottom: 1.5rem;
+}
+
+.to-do-input::placeholder{
+  padding-left: 4rem;
+}
+
+/* Remove black outline on the input field when clicked */
+.to-do-input:focus{
+  outline: none;
+}
+
+/* Individual output rows */
+.to-do-output-row{
+  z-index: 2;
+  background-color: var(--white);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  font-size: 1.125rem;
+  padding: 1.25rem 0 1.25rem 0;
+  width: 100%;
+  display: flex;
+}
+
+/* Output status button (complete/incomplete) */
+.output-status-button{
+  border: solid var(--light-grayish-blue) 2px;
+  border-radius: 50%;
+  padding: 0.25rem 0.8rem;
+  margin: 0 1rem 0 1.25rem;
+}
+
+/* Output text */
+.output-text{
+  color: var(--output-gray);
 }
