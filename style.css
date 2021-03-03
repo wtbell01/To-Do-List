@@ -8,6 +8,9 @@
 }
 
 body{
+  overflow: hidden;
+  overflow-y: scroll;
+  max-width: 100%;
   font-family: 'Josefin Sans', sans-serif;
   
 }
@@ -73,17 +76,16 @@ li{
   right: 0;
   margin: 0 auto;
   width: 40%;
+  border-radius: 5px;
 }
 
 /* Input field on the to do form */
 .to-do-input{
   border: none;
   border-radius: 5px;
-  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
   font-size: 1.125rem;
   padding: 1.25rem 0 1.25rem 4rem;
   color: var(--input-gray); 
-  margin-bottom: 1.5rem;
   width: 100%;
 }
 
@@ -92,13 +94,19 @@ li{
   outline: none;
 }
 
+/* Output container - margin top seperates output from input field */
+.to-do-output-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
 /* Individual output rows */
 .to-do-output-row{
   z-index: 2;
   background-color: var(--white);
   border: none;
-  border-radius: 5px;
-  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  border-bottom: solid var(--very-light-grayish-blue) thin;
   font-size: 1.125rem;
   width: 100%;
   display: flex;
@@ -114,7 +122,7 @@ li{
 }
 
 /* Checkmark inside the output status button */
-.output-status-button i{
+.fa-check{
   color: var(--white);
   font-size: 0.75rem;
 }
@@ -137,15 +145,49 @@ li{
   color: var(--output-gray);
 }
 
-/* Styling for the delete link (x) for each item - hide the x initially */
+/* Styling for the delete link container for each item */
 .output-delete-button-container{
-  visibility: hidden;
   margin-left: 5rem;
   font-size: 1.5rem;
   padding: 1.25rem 0;
 }
 
-/* Display the delete ink (x) when hovering on an output row */
-.to-do-output-row:hover .output-delete-button-container{
-  visibility: visible;
+/* Styling for the delete link (x) for each item */
+.output-delete-button-container{
+  cursor: pointer;
+}
+
+.output-details{
+  background-color: var(--white);
+}
+
+/* Output details container at the bottom of the to do form */
+.output-details-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.25rem 0;
+}
+
+
+/* Submit button container */
+.submit-button-container{
+  position: relative;
+  top: 3rem;
+  text-align: center;
+}
+
+.submit-button{
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.875rem 3rem;
+  border: none;
+  border-radius: 24px;
+  background-color: var(--bright-blue);
+  color: var(--white);
+  outline: none;
 }
