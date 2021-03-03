@@ -34,23 +34,56 @@
       <input type="text" id="to-do-input" class="to-do-input" placeholder="Create a new todo">
 
       <!-- To do output-->
-      <div class="to-do-output-container">
+      <div id= "to-do-output-container" class="to-do-output-container">
         <div class="to-do-output-row">
-          <!-- Button status-->
-          <div class="output-status-button-container">
-            <a href="#" class="output-status-button"><i class="fas fa-check"></i></a>
+         <!-- Button status -->
+         <div class="output-status-button-container">
+           <a href="#" class="output-status-button"><i class="fas fa-check"></i></a>
+         </div>
+     
+         <!-- output text container -->
+         <div class="output-text-container">
+           <p class="output-text">Do homework and stuff</p>
+         </div>
+     
+         <!-- Output delete container -->
+         <div class="output-delete-button-container">
+           <a href="" class="output-delete-button">x</a>
+         </div> 
+       </div>
+         
+      </div>
+
+      <!-- Details container below the to do output (active,completed,etc.)-->
+      <div id="output-details" class="output-details">
+        <!-- FLex container for all detail items-->
+        <div class="output-details-container">
+          <!-- Remaining items container (Left side)-->
+          <div class="remaining-items-container">
+            <p id="remaining-items" class="remaining-items">
+            <span id="remaining-number" class="remaining-number"></span> items left</p>
           </div>
 
-          <!-- output text container -->
-          <div class="output-text-container">
-            <p class="output-text">Do homework and stuff</p>
+          <!-- Status container (Middle) -->
+          <div id="status-container" class="status-container">
+            <!-- Link - Status All-->
+            <a href="#" id="status-all" class="status-all">All</a>
+            <!-- Link - Status Active-->
+            <a href="#" id="status-active" class="status-active">Active</a>
+            <!-- Link - Status Completed-->
+            <a href="#" id="status-completed" class="status-completed">Completed</a>
           </div>
 
-          <!-- Output delete container -->
-          <div class="output-delete-button-container">
-            <a href="" class="output-delete-button">x</a>
+          <!-- Clear completed items container (Right side)-->
+          <div id="clear-completed-items-container" class="clear-completed-items-container">
+            <a href="#" id="clear-completed-items-button" class="clear-completed-items-button">Clear Completed</a>
           </div>
         </div>
+      </div>
+
+      <!-- Submit button container below the form -->
+      <div class="submit-button-container">
+        <button id="submit-button" class="submit-button">Submit</button>
       </div>
     </form>
   </div>
@@ -59,6 +92,11 @@
 
   <!-- Add dynamic number items left --> 
 
+<!---
+  
+
+-->
+
   <!-- All
   Active 
   Completed
@@ -66,6 +104,6 @@
   Clear Completed
 
   Drag and drop to reorder list -->
-
+<script src="app.js"></script>
 </body>
 </html>
