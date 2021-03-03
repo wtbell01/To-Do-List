@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"> <!-- Style sheet -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://kit.fontawesome.com/54d99b3e75.js" crossorigin="anonymous"></script> <!-- Font awesome script -->
 
   <title>Todo app</title>
 </head>
@@ -24,32 +25,35 @@
     </div>
   </div>
 
-  <!-- To do form -->
-  <form class="to-do-form">
-    <!-- To do input -->
-    <input type="text" id="to-do-input" class="to-do-input" placeholder="Create a new todo">
 
-    <!-- To do output-->
-    <div class="to-do-output-container">
-      <div class="to-do-output-row">
-        <!-- Button status-->
-        <div class="output-status-button-container">
-          <a href="#" class="output-status-button"></a>
-        </div>
+  <!-- Gray background for the remainder of the page below the hero -->
+  <div class="gray-background">
+    <!-- To do form -->
+    <form class="to-do-form">
+      <!-- To do input -->
+      <input type="text" id="to-do-input" class="to-do-input" placeholder="Create a new todo">
 
-        <!-- output text container -->
-        <div class="output-text-container">
-          <p class="output-text">Do homework and stuff</p>
-        </div>
+      <!-- To do output-->
+      <div class="to-do-output-container">
+        <div class="to-do-output-row">
+          <!-- Button status-->
+          <div class="output-status-button-container">
+            <a href="#" class="output-status-button"><i class="fas fa-check"></i></a>
+          </div>
 
-        <!-- Output delete container -->
-        <div class="output-delete-button-container">
-          <a href="" class="output-delete-button">x</a>
+          <!-- output text container -->
+          <div class="output-text-container">
+            <p class="output-text">Do homework and stuff</p>
+          </div>
+
+          <!-- Output delete container -->
+          <div class="output-delete-button-container">
+            <a href="" class="output-delete-button">x</a>
+          </div>
         </div>
       </div>
-    </div>
-
-  </form>
+    </form>
+  </div>
 
   <!-- Todo -->
 
