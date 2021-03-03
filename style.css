@@ -4,11 +4,12 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body{
   font-family: 'Josefin Sans', sans-serif;
-  box-sizing: border-box;
+  
 }
 
 a{
@@ -58,10 +59,16 @@ li{
   letter-spacing: 1rem;
 }
 
+/* Gray background color below the hero */
+.gray-background{
+  height: 100vh;
+  background-color: var(--very-light-gray);
+}
+
 /* To do form */
 .to-do-form{
   position: absolute;
-  top: 12rem;
+  top: 25%;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -74,14 +81,10 @@ li{
   border-radius: 5px;
   box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
   font-size: 1.125rem;
-  padding: 1.25rem 0 1.25rem 0;
-  width: 100%;
+  padding: 1.25rem 0 1.25rem 4rem;
   color: var(--input-gray); 
   margin-bottom: 1.5rem;
-}
-
-.to-do-input::placeholder{
-  padding-left: 4rem;
+  width: 100%;
 }
 
 /* Remove black outline on the input field when clicked */
@@ -97,20 +100,52 @@ li{
   border-radius: 5px;
   box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
   font-size: 1.125rem;
-  padding: 1.25rem 0 1.25rem 0;
   width: 100%;
   display: flex;
+  align-items: center;
 }
 
 /* Output status button (complete/incomplete) */
 .output-status-button{
   border: solid var(--light-grayish-blue) 2px;
   border-radius: 50%;
-  padding: 0.25rem 0.8rem;
-  margin: 0 1rem 0 1.25rem;
+  margin: 0 1.4rem 0 1rem;
+  padding: 0.15rem 0.45rem;
 }
+
+/* Checkmark inside the output status button */
+.output-status-button i{
+  color: var(--white);
+  font-size: 0.75rem;
+}
+
+/* Background styling for the output status button when the button is selected for completion */
+.output-status-button-complete{
+  background: linear-gradient(to right bottom, 
+  rgba(87, 221, 255, 1), 
+  rgba(192, 88, 243, 1)
+  );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+}
+
 
 /* Output text */
 .output-text{
   color: var(--output-gray);
+}
+
+/* Styling for the delete link (x) for each item - hide the x initially */
+.output-delete-button-container{
+  visibility: hidden;
+  margin-left: 5rem;
+  font-size: 1.5rem;
+  padding: 1.25rem 0;
+}
+
+/* Display the delete ink (x) when hovering on an output row */
+.to-do-output-row:hover .output-delete-button-container{
+  visibility: visible;
 }
