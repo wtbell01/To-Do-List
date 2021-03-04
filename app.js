@@ -2,8 +2,11 @@
 const taskInput = document.getElementById('to-do-input');
 const toDoOutputContainer = document.getElementById('to-do-output-container');
 
+
 // Event listener on the submit button to add item to the output
 document.getElementById('submit-button').addEventListener('click', getInput);
+
+document.getElementById('status-active').addEventListener('click', displayActive);
 
 //Event listener on the output container to delete individual items
 toDoOutputContainer.addEventListener('click', deleteItem);
@@ -78,11 +81,18 @@ function deleteItem(e){
 
 function toggleStatusButton(e){
   if(e.target.classList.contains('output-status-button')){
+    console.log('works')
     if(e.target.classList.contains('output-status-button-complete')){
       e.target.classList.remove('output-status-button-complete');
     }else if(!e.target.classList.contains('output-status-button-complete')){
       e.target.classList.add('output-status-button-complete');
     }
-  }
+  } 
+  e.preventDefault();
+}
+
+function displayActive(e){
+  document.querySelectorAll('.output-status-button-complete').forEach(row => row.parentElement.parentElement.remove());
+  console.log('works');
   e.preventDefault();
 }
