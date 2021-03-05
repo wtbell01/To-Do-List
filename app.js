@@ -99,7 +99,9 @@ function toggleStatusButton(e){
       e.target.classList.add('output-status-button-complete');
       e.target.classList.remove('output-status-button-incomplete');
     }
-    displayActiveToggleStatus(); 
+
+    // Call function to display number of incomplete items after the status button is clicked
+    itemsLeftOnToggleStatus(); 
   } 
   e.preventDefault();
 }
