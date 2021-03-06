@@ -1,6 +1,19 @@
 /* Import for Josefin font from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
+/* Color variables */
+:root{
+  --bright-blue: #3a7bfd;
+  --very-light-gray: #fafafa;
+  --very-light-grayish-blue: #e4e5f1;
+  --light-grayish-blue: #d2d3db;
+  --dark-grayish-blue: #9394a5;
+  --input-gray: #9495A5;
+  --output-gray: #494C6B;
+  --very-dark-grayish-blue: #484b6a;
+  --white: #ffffff;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -15,26 +28,14 @@ body{
   
 }
 
+/* Remove default styling on links */
 a{
   text-decoration: none;
 }
 
+/* Remove default styling on list items */
 li{
   list-style: none;
-}
-
-
-:root{
-  /* --check-background:linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%) */
-  --bright-blue: #3a7bfd;
-  --very-light-gray: #fafafa;
-  --very-light-grayish-blue: #e4e5f1;
-  --light-grayish-blue: #d2d3db;
-  --dark-grayish-blue: #9394a5;
-  --input-gray: #9495A5;
-  --output-gray: #494C6B;
-  --very-dark-grayish-blue: #484b6a;
-  --white: #ffffff;
 }
 
 /* Hero background */
@@ -107,10 +108,12 @@ li{
   background-color: var(--white);
   border: none;
   border-bottom: solid var(--very-light-grayish-blue) thin;
-  font-size: 1.125rem;
+  height: 100%;
   width: 100%;
+  padding: 1.25rem 0;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 /* Output status button (complete/incomplete) */
@@ -118,7 +121,7 @@ li{
   border: solid var(--light-grayish-blue) 2px;
   border-radius: 50%;
   margin: 0 1.4rem 0 1rem;
-  padding: 0.15rem 0.45rem;
+  padding: 0.15rem 0.35rem;
 }
 
 /* Checkmark inside the output status button */
@@ -137,19 +140,20 @@ li{
   background-size: cover;
   background-repeat: no-repeat;
   border: none;
+  padding: 0.3rem 0.5rem;
 }
-
 
 /* Output text */
 .output-text{
   color: var(--output-gray);
+  font-size: 1.125rem;
 }
 
 /* Styling for the delete link container for each item */
 .output-delete-button-container{
-  margin-left: 5rem;
+  margin-left: auto;
+  margin-right: 1rem;
   font-size: 1.5rem;
-  padding: 1.25rem 0;
 }
 
 /* Styling for the delete link (x) for each item */
@@ -169,6 +173,27 @@ li{
   width: 90%;
   margin: 0 auto;
   padding: 1.25rem 0;
+}
+
+/* Status links at the bottom of the form (All, Active, Completed) */
+.status-link{
+  color: var(--input-gray);
+  margin-right: 1rem;
+}
+
+/* Change color of the status link selected */
+.status-link:focus{
+  color: var(--bright-blue);
+}
+
+/* Change color of the inactive status links when a new link is selected */
+.status-link:focus .status-link:visited{
+  color: var(--input-gray);
+}
+
+/* Clear completed items button */
+.clear-completed-items-button{
+  color: var(--input-gray);
 }
 
 
