@@ -1,0 +1,217 @@
+/* Import for Josefin font from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+/* Color variables */
+:root{
+  --bright-blue: #3a7bfd;
+  --very-light-gray: #fafafa;
+  --very-light-grayish-blue: #e4e5f1;
+  --light-grayish-blue: #d2d3db;
+  --dark-grayish-blue: #9394a5;
+  --input-gray: #9495A5;
+  --output-gray: #494C6B;
+  --very-dark-grayish-blue: #484b6a;
+  --white: #ffffff;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  overflow: hidden;
+  overflow-y: scroll;
+  max-width: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+  
+}
+
+/* Remove default styling on links */
+a{
+  text-decoration: none;
+}
+
+/* Remove default styling on list items */
+li{
+  list-style: none;
+}
+
+/* Hero background */
+.hero-background{
+  height: 50vh;
+  width: 100vw;
+  background: url('/images/bg-desktop-light.jpg') no-repeat center center/cover;
+  position: relative;
+}
+
+/* Header container inside the hero */
+.hero-header{
+  display: flex;
+  justify-content: space-between;
+  width: 47%;
+  margin: 0 auto;
+  padding: 4.3rem 0 0 0;
+}
+
+/* Header logo text on the left side of the hero */
+.header-logo-text{
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 1rem;
+}
+
+/* Gray background color below the hero */
+.gray-background{
+  height: 100vh;
+  background-color: var(--very-light-gray);
+}
+
+/* To do form */
+.to-do-form{
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 50%;
+  border-radius: 5px;
+}
+
+/* Input field on the to do form */
+.to-do-input{
+  border: none;
+  border-radius: 5px;
+  font-size: 1.125rem;
+  padding: 1.25rem 0 1.25rem 4rem;
+  color: var(--input-gray); 
+  width: 100%;
+}
+
+/* Remove black outline on the input field when clicked */
+.to-do-input:focus{
+  outline: none;
+}
+
+/* Output container - margin top seperates output from input field */
+.to-do-output-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+/* Individual output rows */
+.to-do-output-row{
+  z-index: 2;
+  background-color: var(--white);
+  border: none;
+  border-bottom: solid var(--very-light-grayish-blue) thin;
+  height: 100%;
+  width: 100%;
+  padding: 1.25rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Output status button (complete/incomplete) */
+.output-status-button{
+  border: solid var(--light-grayish-blue) 2px;
+  border-radius: 50%;
+  margin: 0 1.4rem 0 1rem;
+  padding: 0.15rem 0.35rem;
+}
+
+/* Checkmark inside the output status button */
+.fa-check{
+  color: var(--white);
+  font-size: 0.75rem;
+}
+
+/* Background styling for the output status button when the button is selected for completion */
+.output-status-button-complete{
+  background: linear-gradient(to right bottom, 
+  rgba(87, 221, 255, 1), 
+  rgba(192, 88, 243, 1)
+  );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  padding: 0.3rem 0.5rem;
+}
+
+/* Output text */
+.output-text{
+  color: var(--output-gray);
+  font-size: 1.125rem;
+}
+
+/* Styling for the delete link container for each item */
+.output-delete-button-container{
+  margin-left: auto;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Styling for the delete link (x) for each item */
+.output-delete-button-container{
+  cursor: pointer;
+}
+
+.output-details{
+  background-color: var(--white);
+}
+
+/* Output details container at the bottom of the to do form */
+.output-details-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.25rem 0;
+}
+
+/* Status links at the bottom of the form (All, Active, Completed) */
+.status-link{
+  color: var(--input-gray);
+  margin-right: 1rem;
+}
+
+/* Change color of the status link selected */
+.status-link:focus{
+  color: var(--bright-blue);
+}
+
+/* Change color of the inactive status links when a new link is selected */
+.status-link:focus .status-link:visited{
+  color: var(--input-gray);
+}
+
+/* Clear completed items button */
+.clear-completed-items-button{
+  color: var(--input-gray);
+}
+
+/* Submit button container */
+.submit-button-container{
+  position: relative;
+  top: 3rem;
+  text-align: center;
+}
+
+.submit-button{
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.875rem 3rem;
+  border: none;
+  border-radius: 24px;
+  background-color: var(--bright-blue);
+  color: var(--white);
+  outline: none;
+}
