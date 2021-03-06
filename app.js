@@ -24,6 +24,9 @@ function loadAllEventListeners(){
   // Event listener on the status all link that displays all items
   document.getElementById('status-all').addEventListener('click', displayAllItems);
 
+  // Event listener on the status all link that deletes all completed items
+  document.getElementById('clear-completed-items-button').addEventListener('click', clearCompletedItems);
+
   //Event listener on the output container that deletes individual items
   toDoOutputContainer.addEventListener('click', deleteItem);
 
@@ -34,10 +37,14 @@ function loadAllEventListeners(){
 
 // Function that gets input and creates elements to display to the output
 function getInput(e){
-  if(taskInput.value === ""){
-    alert('Enter an item');
+  // Regular expression that only accepts letters and spaces between 1-40 characters
+  const taskInputRegEx = /^[a-zA-Z ]{1,40}$/;
+  
+  // If task input is empty or above 40 characters display error message, if not proceed to output the item row
+  if(taskInput.value === "" || !taskInput.value.match(taskInputRegEx)){
+    alert('Item must be between 1-40 characters');
   }else{
-    // Variable for output row div
+    // Variable for output row div and add class
     let toDoOutputRow = document.createElement('div');
     toDoOutputRow.classList.add('to-do-output-row');
 
@@ -84,12 +91,16 @@ function getInput(e){
     // Display the output row in the output container
     toDoOutputContainer.appendChild(toDoOutputRow);
     
+    // Clear the input field
+    taskInput.value = "";
+    
   }
   e.preventDefault();
 }
 
 /* Function that toggles the status button to the left of the to do item when clicked */
 function toggleStatusButton(e){
+  // If the link inside the button is clicked, add or remove styling on the button and call function
   if(e.target.classList.contains('output-status-button')){
     console.log('works')
     if(e.target.classList.contains('output-status-button-complete')){
@@ -103,15 +114,45 @@ function toggleStatusButton(e){
     // Call function to display number of incomplete items after the status button is clicked
     itemsLeftOnToggleStatus(); 
   } 
+  
+  // If the icon inside the button is clicked, add or remove styling on the button and call function
+  if(e.target.parentElement.classList.contains('output-status-button')){
+    console.log('works')
+    if(e.target.parentElement.classList.contains('output-status-button-complete')){
+      e.target.parentElement.classList.remove('output-status-button-complete');
+      e.target.parentElement.classList.add('output-status-button-incomplete'); 
+    }else if(!e.target.parentElement.classList.contains('output-status-button-complete')){
+      e.target.parentElement.classList.add('output-status-button-complete');
+      e.target.parentElement.classList.remove('output-status-button-incomplete');
+    }
+
+    // Call function to display number of incomplete items after the status button is clicked
+    itemsLeftOnToggleStatus(); 
+  } 
   e.preventDefault();
 }
 
 
-/* Function that deletes individual item rows when the delete button is clicked */
+/* Function that deletes individual item row and displays active items remaining when the delete button is clicked */
 function deleteItem(e){
   if(e.target.classList.contains('output-delete-button')){
     e.target.parentElement.parentElement.remove();
   }
+  
+  // Variables for the remaining active items displayed at the bottom of the form
+  let toggleRemainingActive;
+  let toggleIncomplete = 0;
+  
+  // For each button on the form with class incomplete, add 1 to the toggle incomplete total/variable
+  document.querySelectorAll('.output-status-button-incomplete').forEach(button => {
+    toggleIncomplete+=1;
+  });
+ 
+  // Assign incomplete total to remaining active variable and display it on the form 
+ toggleRemainingActive = toggleIncomplete;
+ remainingNumber.innerText = toggleRemainingActive;
+
+
   e.preventDefault();
 }
 
@@ -151,16 +192,26 @@ function displayAllItems(e){
   e.preventDefault();
 }
 
+/* Function that clears all completed items when the clear completed link is clicked */
+function clearCompletedItems(e){
+  document.querySelectorAll('.output-status-button-complete').forEach
+  (row => row.parentElement.parentElement.style.display = "none");
+
+  e.preventDefault();
+}
+
 
 /* Function that displays the number of incomplete items at the bottom of the form each time an item is submitted */
 function itemsLeftOnSubmit(e){
   let remainingActive = 0;
   let activeItems;
   
+  // For each button on the for with class incomplete, add 1 to the remainingActive total/variable
   document.querySelectorAll('.output-status-button-incomplete').forEach(button => {
     remainingActive +=1;
   });
-
+  
+  // Assign incomplete total to remaining active variable and display it on the form 
   activeItems = remainingActive; 
   remainingNumber.innerText = activeItems; 
   
@@ -171,23 +222,14 @@ function itemsLeftOnSubmit(e){
 as complete (blue button with checkmark to the left of the item) */
 function itemsLeftOnToggleStatus(){
   let toggleRemainingActive;
-  let toggleComplete = 0;
   let toggleIncomplete = 0
   
-
+  // For each button on the form with class incomplete, add 1 to the toggle incomplete total/variable
   document.querySelectorAll('.output-status-button-incomplete').forEach(button => {
     toggleIncomplete+=1;
   });
-
-  document.querySelectorAll('.output-status-button-complete').forEach(button => {
-    toggleComplete +=1;
-  });
-
+  
+ // Assign incomplete total to remaining active variable and display it on the form 
  toggleRemainingActive = toggleIncomplete;
-
  remainingNumber.innerText = toggleRemainingActive;
-
- console.log(toggleIncomplete);
- console.log(toggleComplete);
-
 }
