@@ -1,0 +1,192 @@
+/* Media Queries */
+
+/* Media query 1220px */
+@media(max-width: 1220px){
+  /* Header container inside the hero */
+  .hero-header{
+    width: 57%;
+  }
+
+  /* To do form */
+  .to-do-form{
+    width: 60%;
+  }
+}
+
+
+/* Media Query 855px */
+@media(max-width: 855px){
+  /* Header container inside the hero */
+  .hero-header{
+    width: 77%;
+  }
+
+  /* To do form */
+  .to-do-form{
+    width: 80%;
+  }
+}
+
+
+
+/* Media Query 600px */
+@media(max-width: 600px){
+  /* Header container inside the hero */
+  .hero-header{
+    width: 82%;
+  }
+
+  /* Header logo text on the left side of the hero */
+  .header-logo-text{
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+  }
+
+  /* To do form */
+  .to-do-form{
+    width: 85%;
+  }
+
+  /* Input field on the to do form */
+  .to-do-input{
+    font-size: 1rem;
+  }
+
+  /* Output text */
+  .output-text{
+    font-size: 1rem;
+  }
+
+  .remaining-items{
+    font-size: 0.82rem;
+  }
+
+  .remaining-number{
+    font-size: 0.82rem;
+  }
+
+  /* Status links at the bottom of the form (All, Active, Completed) */
+  .status-link{
+    font-size: 0.82rem;
+    margin-right: 0.5rem;
+  }
+
+  /* Clear completed items button */
+  .clear-completed-items-button{
+    font-size: 0.82rem;
+  }
+}
+
+
+/* Media Query 415px */
+@media(max-width: 415px){
+  /* Hero background */
+  .hero-background{
+    height: 25vh;
+  }
+
+  /* Header container inside the hero */
+  .hero-header{
+    width: 87%;
+    padding: 1.75rem 0 0 0;
+  }
+
+  /* Header logo text on the left side of the hero */
+  .header-logo-text{
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+  }
+
+  /* To do form */
+  .to-do-form{
+    top: 12.5%;
+    width: 90%;
+  }
+
+  /* Input field on the to do form */
+  .to-do-input{
+    font-size: 0.9rem;
+    padding: 1rem 0 1rem 3.5rem;
+    width: 100%;
+  }
+
+  /* Individual output rows */
+  .to-do-output-row{
+    padding: 1.25rem 0;
+  }
+
+  /* Output status button (complete/incomplete) */
+  .output-status-button{
+    margin: 0 1.2rem 0 1rem;
+    padding: 0.085rem 0.275rem;
+  }
+
+  /* Background styling for the output status button when the button is selected for completion */
+  .output-status-button-complete{
+    padding: 0.1rem 0.4rem;
+  }
+
+  /* Output details container at the bottom of the to do form */
+  .output-details-container{
+    width: 97%;
+  }
+
+  .remaining-items-container{
+    width: 20%;
+    line-height: 0.9rem;
+    text-align: center;
+  }
+  
+  .remaining-items,
+  .remaining-number{
+    font-size: 1rem;
+  }
+
+  /* Status links at the bottom of the form (All, Active, Completed) */
+  .status-link{
+    font-size: 0.85rem;
+    margin-right: 0.1rem;
+  }
+
+  /* Clear completed items button */
+  .clear-completed-items-button{
+    font-size: 0.8rem;
+  }
+}
+
+
+/* Media Query 320px */
+@media(max-width:320px){
+  /* To do form */
+  .to-do-form{
+    top: 15.5%;
+    width: 98%;
+    
+  }
+  /* Input field on the to do form */
+  .to-do-input{
+    font-size: 0.9rem;
+    padding: 0.75rem 0 0.75rem 2rem;
+  }
+
+  /* Output text */
+  .output-text{
+    font-size: 0.95rem;
+  }
+
+
+  /* Output status button (complete/incomplete) */
+  .output-status-button{
+    margin: 0 0.5rem 0 0.3rem;
+    padding: 0.025rem 0.12rem;
+  }
+
+  /* Background styling for the output status button when the button is selected for completion */
+  .output-status-button-complete{
+    padding: 0.1rem 0.3rem;
+  }
+
+  .submit-button{
+    padding: 0.75rem 2.75rem;
+  }
+}
